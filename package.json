@@ -1,0 +1,17 @@
+{
+  "name": "wxcrm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JimbaCheng",
+  "license": "MIT",
+  "dependencies": {
+    "adbkit": "^2.11.0",
+    "cross-spawn": "^6.0.5",
+    "express": "^4.16.3",
+    "macaca-adb": "^1.0.33"
+  }
+}
