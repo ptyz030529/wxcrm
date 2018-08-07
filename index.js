@@ -8,7 +8,13 @@ const log = require('./src/log');
 const app = express();
 const upload = multer({dest:'upload/'});
 
+
 app.use(log());
+
+app.get('/erp/:number', function(req, res){
+  console.log(req.connection.remoteAddress.match(/\d+\.\d+\.\d+\.\d+/)[0]);
+  console.log(req.params.number);
+});
 
 app.get('/call/:ip/:number', function(req, res){
   const {ip, number} = req.params;
@@ -25,7 +31,6 @@ app.get('/call/:ip/:number', function(req, res){
       });
     }
   });
-  res.send('true');
 });
 
 app.post('/upload/:tel', upload.single('audio'), function(req, res){
@@ -43,4 +48,4 @@ app.post('/upload/:tel', upload.single('audio'), function(req, res){
   });
 });
 
-app.listen(3000);
+app.listen(3111);
